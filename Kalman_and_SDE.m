@@ -11,7 +11,10 @@ true_path_x = reshape(TruePath(1,:), 61, 1);
 true_path_y = reshape(TruePath(4,:), 61, 1);
 speed = reshape(dzhX(1:2,:), 61, 2);
 
-measured_data = 0.5*radar1_data + 0.5*radar2_data;
+average = mean(speed);
+std_deviation = std(speed);
+
+measured_data = 0.5 * radar1_data + 0.5 * radar2_data;
 
 % Kalman filter initialization
 dt = 5;
@@ -26,6 +29,7 @@ H = eye(2);
 
 % x = [measured_data(1, 1); measured_data(1, 2)];
 x = [true_path_x(1); true_path_y(1)];
+
 u = [speed(1, 1); speed(1, 2)];
 
 % x = [measured_data(1, 1); 0; measured_data(1, 2); 0]; % Initial state
@@ -35,10 +39,15 @@ R = eye(2);%[94.957 0;0 2.849]; % Measurement noise covariance, based on radar s
 
 estimated_positions = zeros(61, 2);
 estimated_positions(1,:) = x;
+epsilon_t = randn(61, 1);
+
 
 for k = 2:61
     % Prediction
-    x_hat = A * x + B * u;
+    del_x = average * dt + std_deviation * sqrt(dt) * epsilon_t(k);
+
+    x_hat = x + del_x;
+
     u = [speed(k, 1); speed(k, 2)];
     P_hat = A * P * A' + Q;
 
