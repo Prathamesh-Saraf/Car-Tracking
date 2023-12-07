@@ -56,18 +56,18 @@ end
 figure;
 
 % Plot radar measurements
-% plot(radar1_data(:, 1), radar1_data(:, 2), 'ro', 'DisplayName', 'Radar 1 Data'); 
+plot(radar1_data(1:2, 1), radar1_data(1:2, 2), 'ro', 'DisplayName', 'Radar 1 Data'); 
 hold on;
-% plot(radar2_data(:, 1), radar2_data(:, 2), 'bo', 'DisplayName', 'Radar 2 Data');
+% plot(radar2_data(1:2, 1), radar2_data(1:2, 2), 'bo', 'DisplayName', 'Radar 2 Data');
 
 % Plot averaged measurements
-% plot(measured_data(:, 1), measured_data(:, 2), 'g.', 'DisplayName', 'Averaged Radar Data');
+plot(measured_data(1:2, 1), measured_data(1:2, 2), 'g.', 'DisplayName', 'Averaged Radar Data');
 
 % Plot true path
 plot(true_path_x, true_path_y, 'r.', 'DisplayName', 'True Path');
 
 % Plot estimated positions from Kalman filter
-plot(estimated_positions(:, 1), estimated_positions(:, 2), 'ko', 'DisplayName', 'Kalman Filter Estimate');
+plot(estimated_positions(1:2, 1), estimated_positions(1:2, 2), 'ko', 'DisplayName', 'Kalman Filter Estimate');
 
 
 legend('Location', 'best');
