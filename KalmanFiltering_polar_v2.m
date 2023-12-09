@@ -1,9 +1,12 @@
 % Given data
 clear all;
 clc
-load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\RadarData40.mat');
-load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\TruePath.mat');
-load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\Speed.mat');
+% load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\RadarData40.mat');
+% load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\TruePath.mat');
+% load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\Speed.mat');
+load('./../dataset/RadarData40.mat');
+load('./../dataset/TruePath.mat');
+load('./../dataset/Speed.mat');
 
 radar1_data = reshape(RadarData40(1:2,:), 61, 2);
 radar2_data = reshape(RadarData40(3:4,:), 61, 2);
@@ -25,8 +28,8 @@ A = [1 dt 0  0;
 
 x = [measured_data(1, 1); 0; measured_data(1, 2); 20];
 
-P = eye(4) * 0.1; % Initial covariance
-Q = eye(4) * 100; % Process noise covariance
+P = eye(4) * 0.0001; % Initial covariance
+Q = eye(4) * 10; % Process noise covariance
 R = [9025 0 0 0; 0 0 0 0; 0 0 0.001225 0; 0 0 0 0]; % Measurement noise covariance, based on radar specs
 
 estimated_positions = zeros(61, 2);

@@ -1,9 +1,12 @@
 % Given data
 clear all;
 clc
-load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\RadarData40.mat');
-load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\TruePath.mat');
-load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\Speed.mat');
+% load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\RadarData40.mat');
+% load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\TruePath.mat');
+% load('C:\Users\prath\Desktop\UCSD Courses\FA23\ECE272B\ClassData copy\Speed.mat');
+load('./../dataset/RadarData40.mat');
+load('./../dataset/TruePath.mat');
+load('./../dataset/Speed.mat');
 
 radar1_data = reshape(RadarData40(1:2,:), 61, 2);
 radar2_data = reshape(RadarData40(3:4,:), 61, 2);
@@ -19,7 +22,7 @@ measured_data_polar(12:24, 2) = atan2(measured_data(12:24 , 2), measured_data(12
 dt = 5;
 
 A = [1 dt 0  0; 
-     0  1 0  0; 
+     0  1 0  0;
      0  0 1 dt; 
      0  0 0  1];
 
