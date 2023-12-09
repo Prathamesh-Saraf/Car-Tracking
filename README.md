@@ -38,7 +38,7 @@ Project for course ECE 272B - Filtering and Estimation
 
 ## TODO:
 
-* Implement the piecewise one piece for constant velocity model with nominal velocity
-* Implement the piecewise one piece for constant velocity model with velocity from radar
+* Implement the piecewise one piece for constant velocity model with nominal velocity - Done
+* Implement the piecewise one piece for constant velocity model with velocity from radar - not good
 * Verify mathematical formualtion for velocity state vector
 * implement piecewise completely.

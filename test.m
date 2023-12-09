@@ -82,6 +82,12 @@ for k = 13:24
 end
 
 figure;
+
+
+velocity = radar1_data(12:24, :) - radar1_data(11:23, :);
+velocity = velocity / 5;
+mean_vel_x = mean(velocity(:, 1))
+var_vel_x = std(velocity(:, 1))
 plot(true_path(12:24, 1), true_path(12:24, 2), 'b');%, 'MarkerSize', 10);
 
 hold on;
