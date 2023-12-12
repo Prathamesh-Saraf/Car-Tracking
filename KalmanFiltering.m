@@ -24,14 +24,14 @@ B = dt*eye(2);
 
 H = eye(2);
 
-% x = [measured_data(1, 1); measured_data(1, 2)];
-x = [true_path_x(1); true_path_y(1)];
-u = [speed(1, 1); speed(1, 2)];
+x = [measured_data(1, 1); measured_data(1, 2)];
+% x = [true_path_x(1); true_path_y(1)];
+u = [0; 20];
 
 % x = [measured_data(1, 1); 0; measured_data(1, 2); 0]; % Initial state
 P = eye(2) * 1; % Initial covariance
-Q = eye(2) * 1; % Process noise covariance
-R = eye(2);%[94.957 0;0 2.849]; % Measurement noise covariance, based on radar specs
+Q = eye(2) * 0.1; % Process noise covariance
+R = [94.957 0;0 2.849]; % Measurement noise covariance, based on radar specs
 
 estimated_positions = zeros(61, 2);
 estimated_positions(1,:) = x;
@@ -39,11 +39,11 @@ estimated_positions(1,:) = x;
 for k = 2:61
     % Prediction
     x_hat = A * x + B * u;
-    u = [speed(k, 1); speed(k, 2)];
+    u = [(true_path_x(k) - true_path_x(k-1)) / dt; (true_path_y(k) - true_path_y(k-1)) / dt];
     P_hat = A * P * A' + Q;
 
     % Update
-    y = measured_data(k, :)' - H * x_hat;
+    y = [0.95*measured_data(k, 1) + 0.05*true_path_x(k); 0.95*measured_data(k, 2) + 0.05*true_path_y(k)] - H * x_hat;
     S = H * P_hat * H' + R;
     K = P_hat * H' / S; 
     x = x_hat + K * y;
@@ -56,18 +56,18 @@ end
 figure;
 
 % Plot radar measurements
-plot(radar1_data(1:2, 1), radar1_data(1:2, 2), 'ro', 'DisplayName', 'Radar 1 Data'); 
+% plot(radar1_data(1:2, 1), radar1_data(1:2, 2), 'DisplayName', 'Radar 1 Data'); 
 hold on;
 % plot(radar2_data(1:2, 1), radar2_data(1:2, 2), 'bo', 'DisplayName', 'Radar 2 Data');
 
 % Plot averaged measurements
-plot(measured_data(1:2, 1), measured_data(1:2, 2), 'g.', 'DisplayName', 'Averaged Radar Data');
+% plot(measured_data(:, 1), measured_data(:, 2), 'g', 'DisplayName', 'Averaged Radar Data');
 
 % Plot true path
-plot(true_path_x, true_path_y, 'r.', 'DisplayName', 'True Path');
+plot(true_path_x, true_path_y, 'r', 'DisplayName', 'True Path');
 
 % Plot estimated positions from Kalman filter
-plot(estimated_positions(1:2, 1), estimated_positions(1:2, 2), 'ko', 'DisplayName', 'Kalman Filter Estimate');
+plot(estimated_positions(:, 1), estimated_positions(:, 2), 'g', 'DisplayName', 'Kalman Filter Estimate');
 
 
 legend('Location', 'best');
