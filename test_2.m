@@ -1,3 +1,4 @@
+% Piecewise EKF with velocity from radar measurement diferences
 % Given data
 clear all;
 clc

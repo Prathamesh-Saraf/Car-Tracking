@@ -35,10 +35,35 @@ Project for course ECE 272B - Filtering and Estimation
     * This seems like best choice mathematically. We would only need to appropriately calculate initial covariance.
     * The only problem is that we need to use the nominal velocity. 
     * Experiment with using the velocity from radar.
+* Corners:
+  * (-500, -400), (-500, -200), (-350, -200), (-350, -800), (-950, -800), (-950, 200), (-550, 200), (-550, -400), (-750, -400)
+* Now will assign the intersection directions for each:
+
+|Coordinate|Intersection|Heading|
+|----------|------------|-------|
+|(-500, -400)|North (start)|North|
+|(-500, -200)|North, East|East|
+|(-350, -200)|North, South|South|
+|(-350, -800)|South, West|West|
+|(-750, -800)|South, North, West|West|
+|(-950, -800)|South, North|North|
+|(-950, -400)|North, East|North|
+|(-950, 200)|North, East|East|
+|(-750, 200)|North, South, East|East|
+|(-550, 200)|North, South|South|
+|(-550, -400)|South, West|West|
+|(-750, -400)|South, North, West|North|
+--------------------------------
+
+
+
+
+
 
 ## TODO:
 
 * Implement the piecewise one piece for constant velocity model with nominal velocity - Done
-* Implement the piecewise one piece for constant velocity model with velocity from radar - not good
-* Verify mathematical formualtion for velocity state vector
-* implement piecewise completely.
+* Implement the piecewise one piece for constant velocity model with velocity from radar - Done; Results reasonable but not as good as previous one; also not properly formulated as the Q is calculated from the given data (could make this to calculate on the fly; also think about using the velocity incremental std with this) - HALF Done
+* Verify mathematical formualtion for velocity state vector - Yet to do
+* Implement piecewise completely - yet to do
+* Get the calculation of the initial covariance for the position - yet to do

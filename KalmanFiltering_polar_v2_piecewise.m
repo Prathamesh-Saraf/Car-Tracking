@@ -87,10 +87,10 @@ hold on;
 plot(measured_data(12:24, 1), measured_data(12:24, 2), 'g.', 'DisplayName', 'Averaged Radar Data');
 
 % Plot true path
-plot(true_path(12:24, 1), true_path(12:24, 2), 'r.', 'DisplayName', 'True Path');
+plot(true_path(12:24, 1), true_path(12:24, 2), 'b');%, 'DisplayName', 'True Path');
 
 % Plot estimated positions from Kalman filter
-plot(estimated_positions(12:24, 1), estimated_positions(12:24, 2), 'ko', 'DisplayName', 'Kalman Filter Estimate');
+plot(estimated_positions(12:24, 1), estimated_positions(12:24, 2), 'r');%, 'DisplayName', 'Kalman Filter Estimate');
 
 
 legend('Location', 'best');

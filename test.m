@@ -1,3 +1,4 @@
+% Piecewise EKF from CV motion model using nominal velocity - single path
 % Given data
 clear all;
 clc
@@ -26,12 +27,12 @@ A = [1, 0; 0, 1];
 
 B = [dt, 0; 0, 0];
 
-P = [94.957, 0; 0, 2.849];
+P = [95.957, 0; 0, 2.149];
 
 % Q = [1, 0; 0, 0];
 Q = (vel_increment_std * vel_increment_std) / 4;
 
-R = [9500, 0; 0, 1.4] * 1;
+R = [95*95, 0; 0, 1.4] * 1;
 
 estimated_positions = zeros(61, 2);
 estimated_positions_temp = zeros(61, 2);
@@ -54,6 +55,7 @@ for k = 13:24
     % speed = speed + mvnrnd([0, 0], vel_increment_std)';
     for i = 1:5
         x = A * x + B * speed + mvnrnd([0, 0], 2 * Q)';
+        P = A * P * A' + Q;
     end
 
     % Q = ([-10;0] - speed)/dt;
@@ -86,8 +88,8 @@ figure;
 
 velocity = radar1_data(12:24, :) - radar1_data(11:23, :);
 velocity = velocity / 5;
-mean_vel_x = mean(velocity(:, 1))
-var_vel_x = std(velocity(:, 1))
+mean_vel_x = mean(velocity(:, 1));
+var_vel_x = std(velocity(:, 1));
 plot(true_path(12:24, 1), true_path(12:24, 2), 'b');%, 'MarkerSize', 10);
 
 hold on;
