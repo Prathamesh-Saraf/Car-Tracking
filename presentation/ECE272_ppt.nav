@@ -1,0 +1,77 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Problem Formulation}{3}{Problem Formulation}{0}}
+\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Problem Statement}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{Problem Statement}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{System Dynamics}}
+\headcommand {\slideentry {1}{2}{1}{4/4}{System Dynamics}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {1}{2}{2}{5/5}{System Dynamics}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\beamer@sectionpages {3}{5}}
+\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\sectionentry {2}{Tracking Algorithms}{6}{Tracking Algorithms}{0}}
+\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{Averaging Filter}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{Averaging Filter}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Alpha-Beta Filter}}
+\headcommand {\slideentry {2}{2}{1}{7/7}{Alpha-Beta Filter}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {2}{2}{2}{8/8}{Alpha-Beta Filter}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {2}{2}{3}{9/9}{Alpha-Beta Filter}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionpages {7}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{10}{Kalman Filter}}
+\headcommand {\slideentry {2}{3}{1}{10/10}{Kalman Filter}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {2}{3}{2}{11/11}{Kalman Filter}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{3}{3}{12/12}{Kalman Filter}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {2}{3}{4}{13/13}{Kalman Filter}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@subsectionpages {10}{13}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{14}{Extended Kalman Filter}}
+\headcommand {\slideentry {2}{4}{1}{14/14}{Extended Kalman Filter}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{4}{2}{15/15}{Extended Kalman Filter}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {2}{4}{3}{16/16}{Extended Kalman Filter}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@subsectionpages {14}{16}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{17}{Particle Filter}}
+\headcommand {\slideentry {2}{5}{1}{17/17}{Particle Filter}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{5}{2}{18/18}{Particle Filter}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{5}{3}{19/19}{Particle Filter}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {2}{5}{4}{20/20}{Particle Filter}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@sectionpages {6}{20}}
+\headcommand {\beamer@subsectionpages {17}{20}}
+\headcommand {\sectionentry {3}{Conclusion and Future Work}{21}{Conclusion and Future Work}{0}}
+\headcommand {\slideentry {3}{0}{1}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@sectionpages {21}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\sectionentry {4}{References}{22}{References}{0}}
+\headcommand {\slideentry {4}{0}{1}{22/22}{}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {4}{0}{2}{23/23}{}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@partpages {1}{23}}
+\headcommand {\beamer@subsectionpages {22}{23}}
+\headcommand {\beamer@sectionpages {22}{23}}
+\headcommand {\beamer@documentpages {23}}
+\headcommand {\gdef \inserttotalframenumber {23}}
